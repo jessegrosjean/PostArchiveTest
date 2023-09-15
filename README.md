@@ -1,5 +1,7 @@
 #  PostArchiveTest
 
+**SOLUTION** I restared my machine and both cases work as expected now. Phew.
+
 My post build script only works if I either:
 
 - Give Xcode full disk access
