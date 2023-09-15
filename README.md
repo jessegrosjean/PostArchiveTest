@@ -1,5 +1,12 @@
 #  PostArchiveTest
 
+My post build script only works if I either:
+
+- Give Xcode full disk access
+- OR don't use "Bike" as targets "Product Name".
+
+To be clear the script works, without giving Xcode full disk access, for all other product names that I've tried. Must be something special about Bike, seems likely to be only a problem on my machine. Looking for hints on how to figure out what's wrong and how to fix. 
+
 ## First, this works...
 
 Archive the app. After archive finishes the scheme has a post archive action. The action runs `Script/archive.sh`. That script creates a folder in temp, exports the app from the archive, and then creates `ThisWorks.dmg` with the app.
@@ -7,7 +14,7 @@ Archive the app. After archive finishes the scheme has a post archive action. Th
 ## Second, this doesn't work...
 
 - Go to PostArchiveText taret
-- Change target name to "Bike"
+- Change "Product Name" to "Bike"
 - Archive the app
 
 Everything goes as above until the script calls `/usr/bin/hdiutil create` where it fails. I've included log at end.
